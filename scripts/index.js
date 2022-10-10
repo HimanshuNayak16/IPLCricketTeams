@@ -1,12 +1,5 @@
-import { teams } from "./data/teams.js";
-
+import { setLocalStorage } from "./utils.js";
 const teamCardsContainer = document.getElementById("team-card-container");
-
-const setLocalStorage = () => {
-  if (!localStorage.getItem("teams")) {
-    localStorage.setItem("teams", JSON.stringify(teams));
-  }
-};
 
 setLocalStorage();
 let allTeams = JSON.parse(localStorage.getItem("teams"));
@@ -22,7 +15,7 @@ const createTeamCard = (team) => {
   } = team;
 
   const teamCard = document.createElement("a");
-  teamCard.setAttribute("href", `./team.html?team_id=${teamId}`);
+  teamCard.setAttribute("href", `./../pages/team.html?team_id=${teamId}`);
   teamCard.classList.add("team-card");
   teamCard.style = `background: linear-gradient(180deg, ${teamJerseyColor[0]} 0%,  ${teamJerseyColor[1]} 100%);border: 2px solid ${teamJerseyColor[1]}; `;
 
@@ -70,3 +63,5 @@ const renderTeamCards = () => {
 };
 
 renderTeamCards();
+
+export { setLocalStorage };

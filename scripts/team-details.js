@@ -1,5 +1,4 @@
-import { teams } from "./data/teams.js";
-import { players } from "./data/players.js";
+import { setLocalStorage } from "./utils.js";
 
 const teamContainer = document.getElementById("team-container");
 const playerContainer = document.getElementById("player-container");
@@ -11,17 +10,13 @@ const urlParams = new URLSearchParams(queryString);
 //  URLSearchParams.get() will return the first value associated with the given search parameter
 const teamId = urlParams.get("team_id");
 
-const setLocalStorage = () => {
-  if (!localStorage.getItem("teams")) {
-    localStorage.setItem("teams", JSON.stringify(teams));
-  }
-};
-
 setLocalStorage();
 const teamDetails = JSON.parse(localStorage.getItem("teams")).filter(
   (team) => team.teamId == teamId
 )[0];
-const playerDetails = players.filter((player) => player.from == teamId);
+const playerDetails = JSON.parse(localStorage.getItem("players")).filter(
+  (player) => player.from == teamId
+);
 
 const teamLogoUrl = teamDetails.teamLogoUrl;
 

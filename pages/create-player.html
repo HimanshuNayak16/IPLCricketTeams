@@ -6,7 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IPL Cricket Teams</title>
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./../styles/style.css">
+    <link rel="stylesheet" href="./../styles/form-style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
@@ -17,7 +18,7 @@
 
     <header>
         <nav>
-            <a href="./index.html" class="logo">
+            <a href="./../index.html" class="logo">
                 <svg id="logo-svg" width="500" height="326" viewBox="0 0 500 326" fill="none"
                     xmlns="http://www.w3.org/2000/svg">
                     <path fill-rule="evenodd" clip-rule="evenodd"
@@ -80,13 +81,13 @@
             </div>
             <ul class="nav-links">
                 <li>
-                    <a href="./index.html">HOME</a>
+                    <a href="./../DemoApp.webm">DEMO</a>
                 </li>
                 <li>
                     <a href="./create-team.html">ADD TEAM</a>
                 </li>
                 <li>
-                    <a href="./create-player.html">ADD PLAYER</a>
+                    <a href="#">ADD PLAYER</a>
                 </li>
                 <li>
                     <a href="#">
@@ -100,13 +101,48 @@
         </nav>
     </header>
     <main>
-        <section>
-            <div class="team-create-confirm">
-                <img src="https://shoplane.netlify.app/img/img_confirm.png" alt="" />
-                <h3>IPL Team Created Successfully!!</h3>
-            </div>
+        <section class="form">
+            <h1>IPL Player Creation</h1>
+            <form method="get" action="./player-creation-confirm.html">
+                <fieldset>
+                    <legend>Enter player details here:</legend>
+                    <div>
+                        <label for="playername">Player Name : </label>
+                        <input type="text" id="playername" placeholder="IPL player name..." value="" name="playername"
+                            required />
+                    </div>
+                    <div>
+                        <label for="playerrole">Player Role :</label>
+                        <select name="playerrole">
+                            <option value="Batsman" selected>Batsman</option>
+                            <option value="Bowler">Bowler</option>
+                            <option value="All-rounder">All-rounder</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="playerteam">Player Team :</label>
+                        <select name="playerteam" id="playerteam"></select>
+                    </div>
+                    <div>
+                        <label for="playerprice">Player Price in Crores(INR) : </label>
+                        <input type="number" step="any" min="0.2" max="30" id="playerprice"
+                            placeholder="IPL player price..." value="" name="playerprice" required />
+                    </div>
+                    <div>
+                        <label for="playerimage">Player Profile Image Link :</label>
+                        <input type="url" id="playerimage" placeholder="IPL player image url..." value=""
+                            name="playerimage" />
+                    </div>
+                    <div>
+                        <!-- <input type="submit" /> -->
+                        <button class="submit" type="submit">Submit</button>
+                    </div>
+                </fieldset>
+            </form>
         </section>
     </main>
+    <script type="module" src="./../scripts/player-page.js"></script>
+
 </body>
 
 </html>

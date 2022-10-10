@@ -15,10 +15,12 @@ h1 {
 
 fieldset {
   border: none;
+  margin-top: 20px;
 }
 
 legend {
   font-size: 18px;
+  padding-bottom: 20px;
 }
 
 fieldset > div {
@@ -51,6 +53,7 @@ fieldset > div > input[type="color"] {
 }
 
 .submit {
+  cursor: pointer;
   margin-left: calc(50% - 75px);
   width: 150px;
   color: #19398a;

@@ -6,7 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IPL Cricket Teams</title>
-    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="./../styles/style.css">
+    <link rel="stylesheet" href="./../styles/form-style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
@@ -17,7 +18,7 @@
 
     <header>
         <nav>
-            <a href="#" class="logo">
+            <a href="./../index.html" class="logo">
                 <svg id="logo-svg" width="500" height="326" viewBox="0 0 500 326" fill="none"
                     xmlns="http://www.w3.org/2000/svg">
                     <path fill-rule="evenodd" clip-rule="evenodd"
@@ -80,13 +81,13 @@
             </div>
             <ul class="nav-links">
                 <li>
-                    <a href="./DemoApp.webm">DEMO</a>
+                    <a href="./../DemoApp.webm">DEMO</a>
                 </li>
                 <li>
-                    <a href="./pages/create-team.html">ADD TEAM</a>
+                    <a href="#">ADD TEAM</a>
                 </li>
                 <li>
-                    <a href="./pages/create-player.html">ADD PLAYER</a>
+                    <a href="./create-player.html">ADD PLAYER</a>
                 </li>
                 <li>
                     <a href="#">
@@ -100,13 +101,48 @@
         </nav>
     </header>
     <main>
-        <section>
-            <div id="team-card-container">
+        <section class="form">
+            <h1>IPL Team Creation</h1>
+            <form method="get" action="./team-creation-confirm.html">
+                <fieldset>
+                    <legend>Enter team details here:</legend>
+                    <div>
+                        <label for="teamname">Team Name : </label>
+                        <input type="text" id="teamname" placeholder="IPL team name..." value="" name="teamname"
+                            required />
+                    </div>
+                    <div>
+                        <label for="teamAbbreviation">Team Shorthand :</label>
+                        <input type="text" id="teamAbbreviation" placeholder="IPL Team shorthand..." value=""
+                            name="teamAbbreviation" required />
+                    </div>
+                    <div>
+                        <label for="homeground">Home Ground Name :</label>
+                        <input type="text" id="homeground" placeholder="IPL Team home ground..." value=""
+                            name="homeground" required />
+                    </div>
 
-            </div>
+                    <div>
+                        <label for="teamlogo">Team Logo Image Link :</label>
+                        <input type="url" id="teamlogo" placeholder="IPL Team logo url..." value="" name="teamlogo" />
+                    </div>
+                    <div>
+                        <label for="primarycolor">Primary Jersey Color : </label>
+                        <input type="color" name="primarycolor" id="primarycolor">
+                    </div>
+                    <div>
+                        <label for="secondarycolor">Secondary Jersey Color : </label>
+                        <input type="color" name="secondarycolor" id="secondarycolor">
+                    </div>
+                    <div>
+                        <!-- <input type="submit" /> -->
+                        <button class="submit" type="submit">Submit</button>
+                    </div>
+                </fieldset>
+            </form>
         </section>
     </main>
-    <script type="module" src="./scripts/index.js"></script>
+    <script type="module" src="./../scripts/team-page.js"></script>
 </body>
 
 </html>

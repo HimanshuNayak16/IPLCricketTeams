@@ -1,5 +1,7 @@
-const obj = {};
+import { setLocalStorage } from "./utils.js";
 
+setLocalStorage();
+const obj = {};
 new URLSearchParams(window.location.search).forEach((value, name) => {
   obj[name] = value;
 });
