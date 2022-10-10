@@ -1,7 +1,11 @@
 import { setLocalStorage } from "./utils.js";
+import { addEventListenerToSearchBar } from "./search-player.js";
+
 const teamCardsContainer = document.getElementById("team-card-container");
 
 setLocalStorage();
+addEventListenerToSearchBar();
+
 let allTeams = JSON.parse(localStorage.getItem("teams"));
 
 const createTeamCard = (team) => {

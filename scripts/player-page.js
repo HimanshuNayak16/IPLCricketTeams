@@ -1,6 +1,8 @@
 import { setLocalStorage } from "./utils.js";
+import { addEventListenerToSearchBar } from "./search-player.js";
 
 setLocalStorage();
+addEventListenerToSearchBar();
 
 const allTeamNames = JSON.parse(localStorage.getItem("teams")).map(
   (team) => team.teamId

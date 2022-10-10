@@ -1,4 +1,5 @@
 import { setLocalStorage } from "./utils.js";
+import { addEventListenerToSearchBar } from "./search-player.js";
 
 const teamContainer = document.getElementById("team-container");
 const playerContainer = document.getElementById("player-container");
@@ -11,6 +12,8 @@ const urlParams = new URLSearchParams(queryString);
 const teamId = urlParams.get("team_id");
 
 setLocalStorage();
+addEventListenerToSearchBar();
+
 const teamDetails = JSON.parse(localStorage.getItem("teams")).filter(
   (team) => team.teamId == teamId
 )[0];

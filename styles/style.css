@@ -68,14 +68,14 @@ nav > ul > li > a {
   align-items: center;
 }
 
-#search-team {
+#search-team-player {
   padding: 0px 16px;
   display: flex;
   align-items: center;
   position: relative;
 }
 
-#search-team input {
+#search-team-player input {
   border-radius: 18px;
   height: 36px;
   padding: 0px 0px 0px 8px;
@@ -98,6 +98,33 @@ nav > ul > li > a {
 
 #search-btn:hover {
   cursor: pointer;
+}
+
+#search-results {
+  position: relative;
+}
+
+.search-player-card-wrapper {
+  position: fixed;
+  width: 300px;
+  top: 92px;
+  right: 0;
+  background-color: #ccc;
+  display: flex;
+  flex-direction: column;
+  height: 460px;
+  overflow: auto;
+  scrollbar-width: thin;
+  color: #fff;
+  font-weight: 600;
+  z-index: 99999;
+}
+
+.search-player-card {
+  display: flex;
+  align-items: center;
+  margin: 0px 0px 8px;
+  background: #0078bc;
 }
 
 #hamburger {
@@ -234,19 +261,6 @@ nav > ul > li > a {
   .player-card {
     width: calc(33.33% - 20px);
   }
-}
-@media screen and (max-width: 700px) {
-  #team-card-container {
-    padding: 108px 24px 32px;
-  }
-  .team-card {
-    width: 100%;
-  }
-  .player-card {
-    width: 100%;
-  }
-}
-@media screen and (max-width: 900px) {
   .nav-links {
     display: none;
   }
@@ -276,5 +290,16 @@ nav > ul > li > a {
     height: 3px;
     width: 28px;
     background-color: #fff;
+  }
+}
+@media screen and (max-width: 700px) {
+  #team-card-container {
+    padding: 108px 24px 32px;
+  }
+  .team-card {
+    width: 100%;
+  }
+  .player-card {
+    width: 100%;
   }
 }
