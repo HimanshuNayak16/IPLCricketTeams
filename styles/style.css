@@ -68,23 +68,93 @@ nav > ul > li > a {
   align-items: center;
 }
 
-#search-team-player {
-  padding: 0px 16px;
+.mobileSideBarDiv {
+  z-index: 10000;
+}
+
+.nav-links-mobile {
+  top: 0;
+  right: 0;
+  height: 100vh;
+  padding: 8px 16px;
+  position: absolute;
+  background: #fff;
+  list-style-type: none;
+  background: linear-gradient(
+    92.04deg,
+    #18184a 24.18%,
+    #19398a 50.95%,
+    #18184a 110.32%
+  );
+}
+.nav-links-mobile > li > a {
+  display: inline-block;
+  text-decoration: none;
+  padding: 16px 0px;
+  width: 100%;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  border-bottom: 1px solid #ffffff21;
+}
+
+.search-team-player-mobile {
+  margin: 16px 0px;
+  text-decoration: none;
+}
+
+.close-sidebar-wrapper {
   display: flex;
+  justify-content: flex-end;
+  align-content: center;
+}
+
+.close-sidebar {
+  width: 30px;
+  height: 30px;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
   align-items: center;
+}
+
+.close-sidebar:hover {
+  cursor: pointer;
+}
+
+.cross-lines {
+  width: 24px;
+  height: 2px;
+  background: #fff;
+  position: absolute;
+}
+
+.cross-lines:nth-child(1) {
+  transform: rotate(45deg);
+}
+.cross-lines:nth-child(2) {
+  transform: rotate(-45deg);
+}
+
+.search-team-player {
   position: relative;
 }
 
-#search-team-player input {
+.search-team-player-lg {
+  padding: 0px 16px;
+  display: flex;
+  align-items: center;
+}
+
+.search-team-player input {
   border-radius: 18px;
   height: 36px;
   padding: 0px 0px 0px 8px;
-  /* border: none; */
   outline: none;
   border: 1px solid #ccc;
   font-size: 16px;
 }
-#search-btn {
+.search-btn {
   position: absolute;
   right: 16px;
   top: 0;
@@ -112,7 +182,7 @@ nav > ul > li > a {
   background-color: #ccc;
   display: flex;
   flex-direction: column;
-  height: 460px;
+  height: calc(100vh - 92px);
   overflow: auto;
   scrollbar-width: thin;
   color: #fff;
@@ -267,15 +337,32 @@ nav > ul > li > a {
 
   nav {
     justify-content: space-between;
+    box-shadow: none;
+    padding: 0px 0px 0px 4%;
   }
 
   .hamburger {
+    padding: 0px 12px;
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
   }
 
-  .hamburger:hover {
+  .search-player-card-wrapper {
+    width: 237px;
+  }
+
+  .teams-top-strip {
+    background: linear-gradient(
+      92.04deg,
+      #18184a 24.18%,
+      #19398a 50.95%,
+      #18184a 110.32%
+    );
+  }
+
+  #hamburger-icon:hover {
     cursor: pointer;
   }
 
@@ -284,6 +371,7 @@ nav > ul > li > a {
     flex-direction: column;
     justify-content: space-between;
     height: 24px;
+    z-index: 10001;
   }
 
   .line {

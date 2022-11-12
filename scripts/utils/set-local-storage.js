@@ -1,5 +1,5 @@
-import { teams } from "./../data/teams.js";
-import { players } from "./../data/players.js";
+import { teams } from "../../data/teams.js";
+import { players } from "../../data/players.js";
 
 const setLocalStorage = () => {
   if (!localStorage.getItem("teams")) {

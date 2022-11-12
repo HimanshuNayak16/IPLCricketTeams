@@ -1,12 +1,24 @@
-import { setLocalStorage } from "./utils.js";
-import { addEventListenerToSearchBar } from "./search-player.js";
+import { setLocalStorage } from "./utils/set-local-storage.js";
+import { addEventListenerToSearchBar } from "./utils/search-player.js";
+import {
+  onResizeWindow,
+  addHamburgerFunctionality,
+} from "./utils/hamburger.js";
 
-const teamCardsContainer = document.getElementById("team-card-container");
+const __init__ = () => {
+  setLocalStorage();
+  addHamburgerFunctionality();
+  addEventListenerToSearchBar();
+  renderTeamCards();
+};
 
-setLocalStorage();
-addEventListenerToSearchBar();
+window.addEventListener("load", function () {
+  __init__();
+});
 
-let allTeams = JSON.parse(localStorage.getItem("teams"));
+window.addEventListener("resize", function () {
+  onResizeWindow();
+});
 
 const createTeamCard = (team) => {
   const {
@@ -60,12 +72,10 @@ const createTeamCard = (team) => {
 };
 
 const renderTeamCards = () => {
+  const allTeams = JSON.parse(localStorage.getItem("teams"));
+  const teamCardsContainer = document.getElementById("team-card-container");
   for (const team of allTeams) {
     const teamCard = createTeamCard(team);
     teamCardsContainer.appendChild(teamCard);
   }
 };
-
-renderTeamCards();
-
-export { setLocalStorage };
