@@ -2,4 +2,4 @@
 
 **Inspired from:** https://www.iplt20.com
 
-**Link:** https://www.iplt20.com/](https://exquisite-daffodil-39c88f.netlify.app/)https://exquisite-daffodil-39c88f.netlify.app/
+**Link:** https://exquisite-daffodil-39c88f.netlify.app/)https://exquisite-daffodil-39c88f.netlify.app/
